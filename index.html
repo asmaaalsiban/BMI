@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <div class="parent">
+        <h2 id="weight">Weight:</h2>
+        <input type="text" id="input1" >
+        <h2 id="height">Height:</h2>
+        <input type="text" id="input2">
+       <div class="child">
+        <button type="button" id="click1">Submit</button>
+       </div>
+       <h4 id="ans1"></h4>
+       <h2 id="ans2" style="color: #673ab7b5;"></h2>
+    </div>
+         
+    <script>
+        
+        document.getElementById("click1").addEventListener("click",function(){
+           var weight = document.getElementById("input1").value;
+           var height = document.getElementById("input2").value / 100;
+            var bmi = weight /(height * height);
+            document.getElementById("ans1").innerHTML= `BMI Rate is :${bmi}`
+            if(bmi <= 18)
+            {
+                document.getElementById("ans2").innerHTML="Slim"
+            }
+            else if(bmi > 18 && bmi <= 24.9){
+                
+                document.getElementById("ans2").innerHTML="Ideal Weight"
+            }
+            else if(bmi >=25  && bmi <= 29.9){
+                
+                document.getElementById("ans2").innerHTML="Over Weight"
+            }
+            else if(bmi >= 30 && bmi <= 34.9){
+                
+                document.getElementById("ans2").innerHTML="Obesity"
+            }
+            else if(bmi >= 35 && bmi <= 39.9){
+                
+                document.getElementById("ans2").innerHTML="Obesity 1"
+            }
+            else{
+                
+                document.getElementById("ans2").innerHTML="obesity 2"
+                        }
+        })
+
+
+
+        // function BMI(weight, height){
+        //     return (weight * Math.pow(height,2));
+        // }
+        // var ans=BMI(50,1.6);
+        // console.log(ans)
+
+    </script>
+</body>
+</html>
